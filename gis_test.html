@@ -44,7 +44,13 @@
         document.write( "緯度・経度の誤差	m<br>" + position.accuracy ) ;
         document.write( "高度の誤差	m<br>" + position.altitudeAccuracy ) ;
         document.write( "方角（0～360）	度<br>" + position.heading ) ;
-        document.write( "緯度・経度の誤差	m<br>" + position.speed ) ;
+        document.write( "速度	m/秒<br>" + position.speed ) ;
+
+        document.write("<hr>");
+
+        for ( var prop in position ) {
+            document.write( prop + " " + position[prop] + "<br>") ;
+        }
 
     }
 
