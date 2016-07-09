@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<script>
+    // Geolocation APIに対応している
+    if( navigator.geolocation )
+    {
+        // 現在位置を取得できる場合の処理
+        document.write( "あなたの端末では、現在位置を取得することができます。" ) ;
+        navigator.geolocation.getCurrentPosition( successFunc , errorFunc ) ;
+    }
+// Geolocation APIに対応していない
+    else
+    {
+        // 現在位置を取得できない場合の処理
+        document.write( "あなたの端末では、現在位置を取得できません。<br>" ) ;
+    }
+
+    function successFunc(position) {
+        console.log(position);
+        printGIS(position.coords);
+    }
+
+    function errorFunc(error) {
+        console.log(error);
+    }
+
+    function printGIS(position) {
+        /*属性名	値の内容	値の単位
+         Latitude	緯度（-180～180）	度
+         longitude	経度（-90～90）	度
+         altitude	高度	m
+         accuracy	緯度・経度の誤差	m
+         altitudeAccuracy	高度の誤差	m
+         heading	方角（0～360）	度
+         speed	速度	m/秒
+         */
+        document.write( "緯度 <br>" + position.latitude ) ;
+        document.write( "経度 <br>" + position.longitude ) ;
+        document.write( "高度	m <br>" + position.altitude ) ;
+        document.write( "緯度・経度の誤差	m<br>" + position.accuracy ) ;
+        document.write( "高度の誤差	m<br>" + position.altitudeAccuracy ) ;
+        document.write( "方角（0～360）	度<br>" + position.heading ) ;
+        document.write( "緯度・経度の誤差	m<br>" + position.speed ) ;
+
+    }
+
+</script>
+
+</body>
+
+</html>
