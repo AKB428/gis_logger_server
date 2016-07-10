@@ -80,7 +80,7 @@
         console.log(logText);
 
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-        xmlhttp.open("POST", "/gis/logger");
+        xmlhttp.open("POST", "/gislog");
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xmlhttp.send(JSON.stringify({log: logText}));
     }

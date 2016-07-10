@@ -1,6 +1,6 @@
 require 'sinatra'
-require 'haml'
-require 'shangrila'
+#require 'haml'
+#require 'shangrila'
 require 'sequel'
 require "sinatra/json"
 
