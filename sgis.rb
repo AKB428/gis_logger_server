@@ -3,6 +3,7 @@ require 'sinatra'
 #require 'shangrila'
 require 'sequel'
 require "sinatra/json"
+require "json"
 
 
 configure do
@@ -14,6 +15,8 @@ end
 post '/gislog' do
 
   params = JSON.parse request.body.read
+
+  p params
 
   file = File.open('log.csv','a')
   file.puts params[:log]
