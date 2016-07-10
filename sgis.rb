@@ -19,7 +19,7 @@ post '/gislog' do
   p params
 
   file = File.open('log.csv','a')
-  file.puts params[:log]
+  file.puts params["log"]
   file.close
 
   "OK"

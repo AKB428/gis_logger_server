@@ -76,7 +76,7 @@
     function send() {
 
         memo = document.info.memo.value;;
-        logText = [memo, logText].join(",")
+        logText = memo + "," + logText
         console.log(logText);
 
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
