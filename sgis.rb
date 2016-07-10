@@ -11,7 +11,7 @@ configure do
 
 end
 
-get '/gislog' do
+post '/gislog' do
 
   params = JSON.parse request.body.read
 
